@@ -4,13 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { Windmill } from '@windmill/react-ui'
-
 ReactDOM.render(
   <React.StrictMode>
-    <Windmill>
-      <App />
-    </Windmill>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
