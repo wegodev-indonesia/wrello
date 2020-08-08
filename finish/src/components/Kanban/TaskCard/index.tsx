@@ -20,8 +20,14 @@ const TaskCard: React.FC<Props> = ({ id, content, index }) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
-          <Flex>
-            <Text flex={1} fontSize="sm">
+          <Flex alignItems="center">
+            <Text
+              mr={4}
+              flex={1}
+              fontSize="sm"
+              wordBreak="break-all"
+              whiteSpace="normal"
+            >
               {content}
             </Text>
             <span {...provided.dragHandleProps}>≡</span>
