@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HStack } from "@chakra-ui/core";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 
-import { initialData, InitialData, Column } from "data/initial-data";
+import { initialData, InitialData } from "data/initial-data";
 import KanbanCard from "components/Kanban/KanbanCard";
 
 const KanbanStack: React.FC = () => {
@@ -10,8 +10,6 @@ const KanbanStack: React.FC = () => {
 
   const onDragEnd = (result: DropResult): void => {
     const { destination, source, draggableId } = result;
-    const sourceColumn: Column = data.columns[source.droppableId];
-    const destinationColumn: Column = data.columns[destination!.droppableId];
 
     if (!destination) return;
 
@@ -21,6 +19,9 @@ const KanbanStack: React.FC = () => {
     ) {
       return;
     }
+
+    const sourceColumn = data.columns[source.droppableId];
+    const destinationColumn = data.columns[destination.droppableId];
 
     // Dragging on the same KanbanCard/Column
     if (sourceColumn.id === destinationColumn.id) {
