@@ -33,6 +33,7 @@ const TaskCard: React.FC<Props> = ({ id, content, index }) => {
               fontSize="sm"
               wordBreak="break-all"
               whiteSpace="normal"
+              color="gray.900"
             >
               {content}
             </Text>

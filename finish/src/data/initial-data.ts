@@ -26,7 +26,7 @@ export const initialData: InitialData = {
     "task-3": {
       id: "task-3",
       content:
-        "Charge my phone phone phone phone phone phone phone phone phone phone phone phone",
+        "Research next wegodev course and take notes of the choosen tech-stacks",
     },
     "task-4": { id: "task-4", content: "Cook dinner" },
   },

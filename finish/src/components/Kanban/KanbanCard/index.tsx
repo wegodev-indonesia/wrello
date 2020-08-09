@@ -13,7 +13,7 @@ type KanbanCardProps = {
 
 const KanbanCard: React.FC<KanbanCardProps> = ({ id, title, tasks = [] }) => {
   return (
-    <Box width="270px" p={2} bg="gray.300" rounded={4}>
+    <Box width="270px" p={2} bg="blue.100" rounded={4}>
       <Flex direction="column">
         <Box mb={2}>
           <Text fontSize="lg" fontWeight={500} color="gray.900" isTruncated>
@@ -28,7 +28,7 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ id, title, tasks = [] }) => {
               minHeight="60px"
               ref={provided.innerRef}
               rounded={2}
-              backgroundColor={snapshot.isDraggingOver ? "gray.400" : undefined}
+              backgroundColor={snapshot.isDraggingOver ? "blue.200" : undefined}
               {...provided.droppableProps}
             >
               {tasks.length > 0
