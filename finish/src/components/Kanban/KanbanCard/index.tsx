@@ -27,6 +27,7 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ id, title, tasks = [] }) => {
               flex={1}
               minHeight="60px"
               ref={provided.innerRef}
+              backgroundColor={snapshot.isDraggingOver ? "blue.100" : undefined}
               {...provided.droppableProps}
             >
               {tasks.length > 0
