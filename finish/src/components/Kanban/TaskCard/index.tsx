@@ -1,6 +1,7 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import { Box, Text, Flex } from "@chakra-ui/core";
+import { GrDrag } from "react-icons/gr";
 
 type Props = {
   id: string;
@@ -37,7 +38,9 @@ const TaskCard: React.FC<Props> = ({ id, content, index }) => {
             >
               {content}
             </Text>
-            <span {...provided.dragHandleProps}>≡</span>
+            <span {...provided.dragHandleProps}>
+              <Box as={GrDrag} />
+            </span>
           </Flex>
         </Box>
       )}
