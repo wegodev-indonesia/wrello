@@ -44,6 +44,34 @@ const KanbanStack: React.FC = () => {
       setData(newData);
       return;
     }
+
+    if (sourceColumn.id !== destinationColumn.id) {
+      const sourceTaskIds = Array.from(sourceColumn.taskIds);
+      sourceTaskIds.splice(source.index, 1);
+      const newSourceTaskIds = {
+        ...sourceColumn,
+        taskIds: sourceTaskIds,
+      };
+
+      const destinationTaskIds = Array.from(destinationColumn.taskIds);
+      destinationTaskIds.splice(destination.index, 0, draggableId);
+      const newDestinationTaskIds = {
+        ...destinationColumn,
+        taskIds: destinationTaskIds,
+      };
+
+      const newState = {
+        ...data,
+        columns: {
+          ...data.columns,
+          [sourceColumn.id]: newSourceTaskIds,
+          [destinationColumn.id]: newDestinationTaskIds,
+        },
+      };
+
+      setData(newState);
+      return;
+    }
   };
 
   return (
