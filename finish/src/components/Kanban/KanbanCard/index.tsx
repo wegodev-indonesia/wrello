@@ -29,7 +29,11 @@ const KanbanCard: React.FC<KanbanCardProps> = ({ id, title, tasks = [] }) => {
               justifyContent={tasks.length > 0 ? "none" : "center"}
               alignItems={tasks.length > 0 ? "none" : "center"}
               minHeight={tasks.length > 0 ? "none" : "60px"}
-              border={snapshot.isDraggingOver ? "none" : "1.5px dashed gray"}
+              border={
+                snapshot.isDraggingOver || tasks.length > 0
+                  ? "none"
+                  : "1.5px dashed gray"
+              }
               ref={provided.innerRef}
               rounded={2}
               backgroundColor={snapshot.isDraggingOver ? "blue.200" : "blue.50"}
