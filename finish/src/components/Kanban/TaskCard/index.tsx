@@ -17,6 +17,7 @@ const TaskCard: React.FC<Props> = ({ id, content, index }) => {
           bg="white"
           p={1}
           rounded={2}
+          boxShadow={`0 1px 0 rgba(9,30,66,.25)`}
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
