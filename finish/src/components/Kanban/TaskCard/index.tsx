@@ -17,7 +17,12 @@ const TaskCard: React.FC<Props> = ({ id, content, index }) => {
           bg="white"
           p={1}
           rounded={2}
-          boxShadow={`0 1px 0 rgba(9,30,66,.25)`}
+          boxShadow={
+            snapshot.isDragging
+              ? `6px 6px 0 rgba(10,40,76,.15)`
+              : `0 1px 0 rgba(9,30,66,.25)`
+          }
+          backgroundColor={snapshot.isDragging ? "blue.50" : "white"}
           ref={provided.innerRef}
           {...provided.draggableProps}
         >
