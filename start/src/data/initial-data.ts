@@ -1,25 +1,4 @@
-export type InitialData = {
-  tasks: {
-    [key: string]: Task;
-  };
-  columns: {
-    [key: string]: Column;
-  };
-  columnOrder: string[];
-};
-
-export type Task = {
-  id: string;
-  content: string;
-};
-
-export type Column = {
-  id: string;
-  title: string;
-  taskIds: string[] | [];
-};
-
-export const initialData: InitialData = {
+export const initialData = {
   tasks: {
     "task-1": { id: "task-1", content: "Take out the garbage" },
     "task-2": { id: "task-2", content: "Watchh my favorite show" },
